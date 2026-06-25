@@ -1,14 +1,10 @@
 // /pages/api/oauth.js
 import { createClient } from '@supabase/supabase-js';
 
-const supabaseUrl = process.env.SUPABASE_URL;https://rclfdidghbjeaghtblgf.supabase.co
-const supabaseKey = process.env.SUPABASE_ANON_KEY;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJjbGZkaWRnaGJqZWFnaHRibGdmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODIzNzcyNjIsImV4cCI6MjA5Nzk1MzI2Mn0.s6CMKzM_AJ-VLP2Xbrtf9Lfh9e-x83qGHWJ788zwans
-
-if (!supabaseUrl || !supabaseKey) {
-  console.error("Brak SUPABASE_URL lub SUPABASE_ANON_KEY w env!");
-}
-
-const supabase = createClient(supabaseUrl, supabaseKey);
+const supabase = createClient(
+  '',
+  ''
+);
 
 const guildId = '1517639933852909689'; // <- ID twojego serwera
 const botToken = process.env.DISCORD_BOT_TOKEN; // <- Dodaj do .env lub wpisz ręcznie (jeśli testujesz)
