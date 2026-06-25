@@ -2,8 +2,8 @@
 import { createClient } from '@supabase/supabase-js';
 
 const supabase = createClient(
-  '',
-  ''
+  'https://rclfdidghbjeaghtblgf.supabase.co',
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJjbGZkaWRnaGJqZWFnaHRibGdmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODIzNzcyNjIsImV4cCI6MjA5Nzk1MzI2Mn0.s6CMKzM_AJ-VLP2Xbrtf9Lfh9e-x83qGHWJ788zwans'
 );
 
 const guildId = '1517639933852909689'; // <- ID twojego serwera
