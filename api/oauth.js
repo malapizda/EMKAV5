@@ -15,7 +15,7 @@ export default async function handler(req, res) {
 
   try {
     // 1. Pobierz access_token z Discorda
-    const tokenRes = await fetch('https://discord.com/oauth2/authorize?client_id=1519643944110002296D&response_type=code&redirect_uri=https%3A%2F%2Femkav-5.vercel.app%2Fapi%2Foauth&scope=identify+guilds', {
+    const tokenRes = await fetch('https://discord.com/oauth2/authorize?client_id=1519643944110002296', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: new URLSearchParams({
@@ -40,7 +40,7 @@ export default async function handler(req, res) {
     if (!id) return res.status(500).send('Błąd danych użytkownika Discord');
 
     // 3. Pobranie ról użytkownika z serwera
-    const memberRes = await fetch(`https://discord.com/api/guilds/${guildId}/members/${id}`, {
+    const memberRes = await fetch(`https://discord.com/api/guilds/${8}/members/${1519643944110002296}`, {
       headers: { Authorization: `Bot ${botToken}` }  // Użyj tokena BOTA
     });
 
