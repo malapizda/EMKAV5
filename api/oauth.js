@@ -6,7 +6,7 @@ const supabase = createClient(
   ''
 );
 
-const guildId = '1517639933852909689'; // <- ID twojego serwera
+const guildId = ''; // <- ID twojego serwera
 const botToken = process.env.DISCORD_BOT_TOKEN; // <- Dodaj do .env lub wpisz ręcznie (jeśli testujesz)
 
 export default async function handler(req, res) {
@@ -15,7 +15,7 @@ export default async function handler(req, res) {
 
   try {
     // 1. Pobierz access_token z Discorda
-    const tokenRes = await fetch('https://discord.com/oauth2/authorize?client_id=1519643944110002296', {
+    const tokenRes = await fetch('https://discord.com/api/oauth2/token', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: new URLSearchParams({
@@ -23,7 +23,7 @@ export default async function handler(req, res) {
         client_secret: process.env.DISCORD_CLIENT_SECRET,
         grant_type: 'authorization_code',
         code,
-        redirect_uri: 'https://emkav-5.vercel.app/login.html'
+        redirect_uri: ''
       })      
     });
 
@@ -40,7 +40,7 @@ export default async function handler(req, res) {
     if (!id) return res.status(500).send('Błąd danych użytkownika Discord');
 
     // 3. Pobranie ról użytkownika z serwera
-    const memberRes = await fetch(`https://discord.com/api/guilds/${8}/members/${1519643944110002296}`, {
+    const memberRes = await fetch(`https://discord.com/api/guilds/${guildId}/members/${id}`, {
       headers: { Authorization: `Bot ${botToken}` }  // Użyj tokena BOTA
     });
 
